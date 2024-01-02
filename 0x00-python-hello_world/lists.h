@@ -1,7 +1,7 @@
 #ifndef LISTS_H
 #define LISTS_H
 
-typdef struct listint_s
+typdef struct listnt_s
 {
 int n;
 struct listint_s *next;
