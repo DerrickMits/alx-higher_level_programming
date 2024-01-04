@@ -1,24 +1,20 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub, mul, div
-from sys import argv
 
 if __name__ == "__main__":
-    if len(argv) != 4:
+    """Handle basic arithmetic operations."""
+    from calculator_1 import add, sub, mul, div
+    import sys
+
+    if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit(1)
+        sys.exit(1)
 
-    a, operator, b = map(int, argv[1:])
+    a, operator, b = map(int, sys.argv[1:])
     
-    if operator == '+':
-        result = add(a, b)
-    elif operator == '-':
-        result = sub(a, b)
-    elif operator == '*':
-        result = mul(a, b)
-    elif operator == '/':
-        result = div(a, b)
-    else:
+    ops = {"+": add, "-": sub, "*": mul, "/": div}
+    if operator not in ops:
         print("Unknown operator. Available operators: +, -, * and /")
-        exit(1)
+        sys.exit(1)
 
-    print("{} {} {} = {}".format(a, operator, b, result))
+    result = ops[operator](a, b)
+    print(f"{a} {operator} {b} = {result}")
