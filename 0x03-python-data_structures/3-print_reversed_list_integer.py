@@ -2,14 +2,7 @@
 
 def print_reversed_list_integer(my_list=[]):
     """
-    Print integers from the list in reverse order, one per line.
-
-    Args:
-        my_list (list): List containing integers.
-
-    Returns:
-        None
+    Print integers from the list in reverse order, one per line
     """
-    if my_list:
     for num in reversed(my_list):
         print("{:d}".format(num))
