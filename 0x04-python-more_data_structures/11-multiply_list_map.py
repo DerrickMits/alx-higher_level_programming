@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-    multiply_list_map = lambda l, n: list(map(lambda x: x * n, l))
+def multiply_list_map(my_list=[], number=0):
+    return list(map((number).__mul__, my_list))
