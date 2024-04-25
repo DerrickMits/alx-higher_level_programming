@@ -1,3 +1,4 @@
 #!/bin/bash
-# This script takes in a URL, sends a GET request, and displays(body)
-curl -s -X GET "$1" -D - | awk '/HTTP\/1.1 200 OK/ {flag=1; next} flag {print}'
+# Takes in a URL, sends a GET request to the URL,
+#displays the body of the response
+curl -sX GET "$1" -L 200
