@@ -2,5 +2,9 @@
 const request = require('request');
 const url = process.argv[2];
 request.get(url, (err, response, body) => {
-  console.log(response);
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('code:', response.statusCode);
+  }
 });
